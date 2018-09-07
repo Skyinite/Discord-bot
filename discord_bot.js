@@ -9,8 +9,8 @@ client.on("ready", ()=>{
 });
 
 
-client.on("message", (message) => {
-    if (message.content.startsWith("ping")) {
-        message.channel.send("pong!");
+client.on("message", (msg) => {
+    if (msg.content.startsWith("ping")) {
+        msg.channel.send("pong!");
 }
 });
