@@ -14,6 +14,13 @@ client.on("ready", ()=>{
 client.on("message", (msg) => {
     //Prevents botception
         if (msg.author.bot) return
+        //THIS RIGHT HERE COMPLETELY OBLITERATES LINKS BECAUSE FUCK LINKS
+        if(msg.content.includes("https://discord.gg/")){
+            msg.delete();
+            msg.author.send("You are reminded that no outside discord links are allowed in the server.")
+            console.log("LINK OBLITERATED.");
+        }
+
         //ping
         if (msg.content.startsWith(config.prefix + "ping")) {
         msg.reply("pong!");
